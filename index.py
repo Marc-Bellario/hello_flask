@@ -12,24 +12,25 @@ def connect():
     return handle
 
 app = Flask(__name__)
-handle = connect()
+#handle = connect()
 
 # Bind our index page to both www.domain.com/ and www.domain.com/index
 @app.route("/index" ,methods=['GET'])
 @app.route("/", methods=['GET'])
 def index():
-    userinputs = [x for x in handle.mycollection.find()]
+#    userinputs = [x for x in handle.mycollection.find()]
+#    return render_template('index.html', userinputs=userinputs)
     return render_template('index.html', userinputs=userinputs)
 
 @app.route("/write", methods=['POST'])
 def write():
     userinput = request.form.get("userinput")
-    oid = handle.mycollection.insert({"message":userinput})
+#    oid = handle.mycollection.insert({"message":userinput})
     return redirect ("/")
 
 @app.route("/deleteall", methods=['GET'])
 def deleteall():
-    handle.mycollection.remove()
+#    handle.mycollection.remove()
     return redirect ("/")
 
 # Remove the "debug=True" for production
