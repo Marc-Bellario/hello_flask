@@ -6,9 +6,15 @@ def connect():
 # Substitute the 5 pieces of information you got when creating
 # the Mongo DB Database (underlined in red in the screenshots)
 # Obviously, do not store your password as plaintext in practice
-    connection = MongoClient("mongodb://ds043262.mongolab.com",43262)
-    handle = connection["code101"]
-    handle.authenticate("admin010101","010101admin")
+    try:
+        connection = MongoClient("mongodb://ds043262.mongolab.com",43262)
+        handle = connection["code101"]
+        handle.authenticate("admin010101","010101admin")
+    except Exception as e:
+        print app
+        print e.args      # arguments stored in .args
+        print " - init exception value: ", e
+        handle = None
     return handle
 
 app = Flask(__name__)
@@ -19,9 +25,16 @@ handle = connection()
 @app.route("/index" ,methods=['GET'])
 @app.route("/", methods=['GET'])
 def index():
-    userinputs = [x for x in handle.mycollection.find()]
+    print "hello-flask-again"
+    try:
+        userinputs = [x for x in handle.mycollection.find()]
+    except Exception as e:
+        print app
+        print e.args      # arguments stored in .args
+        print " - init exception value: ", e
+        userinputs = None
     return render_template('index.html', userinputs=userinputs)
-#    print "hello-flask-again"
+
 
 @app.route("/write", methods=['POST'])
 def write():
