@@ -7,7 +7,7 @@ def connect():
 # the Mongo DB Database (underlined in red in the screenshots)
 # Obviously, do not store your password as plaintext in practice
     try:
-        connection = MongoClient("mongodb://ds043262.mongolab.com",43262)
+        connection = MongoClient("mongodb://ds043262.mongolab.com:43262")
         handle = connection["code101"]
         handle.authenticate("admin010101","010101admin")
     except Exception as e:
