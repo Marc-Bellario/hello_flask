@@ -22,7 +22,7 @@ def index():
 #    return render_template('index.html', userinputs=userinputs)
     print "hello-flask-again"
 #    return "hello-flask-again"
-    return render_template('index1.html')
+    return render_template('index.html')
 
 @app.route("/write", methods=['POST'])
 def write():
