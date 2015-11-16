@@ -21,8 +21,8 @@ def index():
 #    userinputs = [x for x in handle.mycollection.find()]
 #    return render_template('index.html', userinputs=userinputs)
     print "hello-flask-again"
-    return "hello-flask-again"
-#    return render_template('index.html')
+#    return "hello-flask-again"
+    return render_template('index1.html')
 
 @app.route("/write", methods=['POST'])
 def write():
