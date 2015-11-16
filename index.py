@@ -12,7 +12,7 @@ def connect():
     return handle
 
 app = Flask(__name__)
-handle = connect()
+handle = MongoClient('mongodb://admin010101:010101admin@ds043262.mongolab.com:43262/code101')
 
 # Bind our index page to both www.domain.com/ and www.domain.com/index
 @app.route("/index" ,methods=['GET'])
