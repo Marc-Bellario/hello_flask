@@ -20,7 +20,7 @@ handle = connect()
 def index():
     userinputs = [x for x in handle.mycollection.find()]
     return render_template('index.html', userinputs=userinputs)
-    print "hello-flask-again"
+#    print "hello-flask-again"
 
 @app.route("/write", methods=['POST'])
 def write():
