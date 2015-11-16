@@ -6,13 +6,14 @@ def connect():
 # Substitute the 5 pieces of information you got when creating
 # the Mongo DB Database (underlined in red in the screenshots)
 # Obviously, do not store your password as plaintext in practice
-    connection = MongoClient("ds043262.mongolab.com",43262)
+    connection = MongoClient("mongodb://ds043262.mongolab.com",43262)
     handle = connection["code101"]
     handle.authenticate("admin010101","010101admin")
     return handle
 
 app = Flask(__name__)
-handle = MongoClient('mongodb://admin010101:010101admin@ds043262.mongolab.com:43262/code101')
+handle = connection()
+#handle = MongoClient('mongodb://admin010101:010101admin@ds043262.mongolab.com:43262/code101')
 
 # Bind our index page to both www.domain.com/ and www.domain.com/index
 @app.route("/index" ,methods=['GET'])
