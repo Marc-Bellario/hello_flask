@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request, redirect
 import os
 from pymongo import MongoClient
-
+app = Flask(__name__)
 def connect():
 # Substitute the 5 pieces of information you got when creating
 # the Mongo DB Database (underlined in red in the screenshots)
 # Obviously, do not store your password as plaintext in practice
+    print "start connection"
     try:
         connection = MongoClient("mongodb://ds043262.mongolab.com:43262")
         handle = connection["code101"]
@@ -17,7 +18,7 @@ def connect():
         handle = None
     return handle
 
-app = Flask(__name__)
+
 handle = connection()
 #handle = MongoClient('mongodb://admin010101:010101admin@ds043262.mongolab.com:43262/code101')
 
