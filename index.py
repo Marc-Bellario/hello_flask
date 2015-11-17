@@ -21,6 +21,9 @@ def connect():
     '''
 
 #connection = connection()
+connection_string = ENV['MONGOLAB_URI'] 􀂐􀂘
+print connection_string
+
 connection = MongoClient('mongodb://admin010101:010101admin@ds043262.mongolab.com:43262/code101')
 db = connection.code101.ctec121
 # Bind our index page to both www.domain.com/ and www.domain.com/index
