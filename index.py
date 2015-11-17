@@ -6,7 +6,7 @@ def connect():
 # Substitute the 5 pieces of information you got when creating
 # the Mongo DB Database (underlined in red in the screenshots)
 # Obviously, do not store your password as plaintext in practice
-'''
+    '''
     print "start connection"
     try:
         connection = MongoClient("mongodb://ds043262.mongolab.com:43262")
@@ -18,7 +18,7 @@ def connect():
         print " - init exception value: ", e
         handle = None
     return handle
-'''
+    '''
 
 #connection = connection()
 connection = MongoClient('mongodb://admin010101:010101admin@ds043262.mongolab.com:43262/code101')
@@ -50,8 +50,8 @@ def deleteall():
     return redirect ("/")
 
 # Remove the "debug=True" for production
-#if __name__ == '__main__':
+if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
     #port = int(os.environ.get('PORT', 5000))
     #app.run(host='0.0.0.0', port=port)
-#    app.run()
+    app.run(debug=True)
