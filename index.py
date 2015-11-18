@@ -27,7 +27,7 @@ if 'MONGOLAB_URI_CODE101' in os.environ:
     connection_string = str(os.environ['MONGOLAB_URI_CODE101'])
     print connection_string
 
-connection = MongoClient('mongodb://admin010101:010101admin@ds043262.mongolab.com:43262/code101')
+connection = MongoClient(connection_string)
 db = connection.code101.ctec121
 # Bind our index page to both www.domain.com/ and www.domain.com/index
 @app.route("/index" ,methods=['GET'])
