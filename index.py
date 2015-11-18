@@ -21,7 +21,7 @@ def connect():
     '''
 
 #connection = connection()
-connection_string =  os.environ['MONGOLAB_URI_CODE101'] 􀂐􀂘
+connection_string =  str(os.environ['MONGOLAB_URI_CODE101']) 􀂐􀂘
 print connection_string
 
 connection = MongoClient('mongodb://admin010101:010101admin@ds043262.mongolab.com:43262/code101')
